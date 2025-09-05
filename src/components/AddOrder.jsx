@@ -42,6 +42,7 @@ export default function AddOrder() {
     });
 
     let data = await res.json();
+
     if (data.success) {
       alert("Order added!");
       setSelectedProduct(null);
