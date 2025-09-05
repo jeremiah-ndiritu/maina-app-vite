@@ -6,15 +6,15 @@ export default function RegisterUser({ type }) {
   let passwordEl = useRef();
   let phonenumberEl = useRef();
   async function handleRegister() {
-    let formData = new FormData();
-    action == "register" &&
-      formData.append("username", `${usernameEl.current.value}`);
-    formData.append("phonenumber", `${phonenumberEl.current.value}`);
-    formData.append("password", `${passwordEl.current.value}`);
-
     let res = await fetch(`${import.meta.env.VITE_API_URL}/auth/${action}`, {
       method: "POST",
-      body: formData,
+      body: JSON.stringify({
+        ...(action == "register" && {
+          username: `${usernameEl.current.value}`,
+        }),
+        phonenumber: `${phonenumberEl.current.value}`,
+        password: `${passwordEl.current.value}`,
+      }),
     });
     let data = await res.json();
     if (res.ok) {
