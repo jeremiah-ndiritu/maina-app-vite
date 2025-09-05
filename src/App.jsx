@@ -1,30 +1,13 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./App.css";
-import Names from "./components/Names";
+
 import Products from "./components/Products";
 import AddProduct from "./components/AddProduct";
 import Orders from "./components/Orders";
 import Stats from "./components/Stats";
 
 function App() {
-  let [names, setNames] = useState([]);
-  useEffect(() => {
-    let getNames = async () => {
-      try {
-        let res = axios.get(
-          "https://test-host-on-render.onrender.com/api/names"
-        );
-        let data = (await res).data;
-        setNames(data.names);
-        console.log(data);
-      } catch (err) {
-        alert("Error fetching names");
-        console.log(err);
-      }
-    };
-    getNames();
-  }, []);
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
 
@@ -49,7 +32,6 @@ function App() {
   return (
     <>
       <h1 className="heading">Maina vite app</h1>
-      <Names names={names} />
       <AddProduct setProducts={setProducts} />
       <Products products={products} />
       <Orders orders={orders} />
