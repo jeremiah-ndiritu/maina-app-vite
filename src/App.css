@@ -1,10 +1,9 @@
-.heading {
-  color: red;
-  font-size: 50px;
-  text-align: center;
+* {
+  padding-top: 25px;
 }
-.names {
-  color: blue;
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
+body {
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    background: red;
+  }
 }

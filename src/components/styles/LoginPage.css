@@ -1,0 +1,21 @@
+.login-page {
+  place-self: center;
+  padding-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.select-action {
+  background: #000;
+  color: white;
+  display: flex;
+  gap: 2em;
+}
+.select-action label h5 {
+  margin: 0;
+  font-family: Poppins;
+}

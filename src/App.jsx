@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
-// import axios from "axios";
-import "./App.css";
-
-import Products from "./components/Products";
-import AddProduct from "./components/AddProduct";
-import Orders from "./components/Orders";
-import Stats from "./components/Stats";
-
+import { Routes, Route } from "react-router-dom";
+import MainHeader from "./components/MainHeader";
+import ProductsPage from "./pages/ProductsPage";
+import OrdersPage from "./pages/OrdersPage";
+import StatsPage from "./pages/StatsPage";
+import LoginPage from "./pages/LoginPage";
+import { useState, useEffect } from "react";
 function App() {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -31,11 +29,16 @@ function App() {
 
   return (
     <>
-      <h1 className="heading">Maina vite app</h1>
-      <AddProduct setProducts={setProducts} />
-      <Products products={products} />
-      <Orders orders={orders} />
-      <Stats orders={orders} />
+      <MainHeader />
+      <Routes>
+        <Route
+          path="/products"
+          element={<ProductsPage products={products} />}
+        />
+        <Route path="/orders" element={<OrdersPage orders={orders} />} />
+        <Route path="/stats" element={<StatsPage orders={orders} />} />
+        <Route path="/login" element={<LoginPage type="login" />} />
+      </Routes>
     </>
   );
 }
