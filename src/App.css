@@ -1,0 +1,10 @@
+.heading {
+  color: red;
+  font-size: 50px;
+  text-align: center;
+}
+.names {
+  color: blue;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
