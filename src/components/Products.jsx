@@ -30,7 +30,7 @@ export default function Products({ products }) {
             >
               {product.image && (
                 <img
-                  src={`${import.meta.env.VITE_API_URL}/${product.image}`}
+                  src={`${import.meta.env.VITE_API_URL}${product.image}`}
                   alt={product.image}
                   style={{
                     width: "100%",
