@@ -14,7 +14,7 @@ export default function AddProduct({ setProducts }) {
     formData.append("discount", discount);
     if (file) formData.append("image", file);
 
-    let res = await fetch(`${import.meta.env.VITE_API_URL}api/add-product`, {
+    let res = await fetch(`${import.meta.env.VITE_API_URL}/api/add-product`, {
       method: "POST",
       body: formData,
     });

@@ -31,7 +31,7 @@ function App() {
   // fetch products initially
   useEffect(() => {
     async function fetchProducts() {
-      let res = await fetch(`${import.meta.env.VITE_API_URL}api/products`);
+      let res = await fetch(`${import.meta.env.VITE_API_URL}/api/products`);
       let data = await res.json();
       if (data.products) setProducts(data.products);
     }
@@ -39,7 +39,7 @@ function App() {
   }, []);
   useEffect(() => {
     async function fetchOrders() {
-      let res = await fetch(`${import.meta.env.VITE_API_URL}api/orders`);
+      let res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`);
       let data = await res.json();
       if (data.orders) setOrders(data.orders);
     }

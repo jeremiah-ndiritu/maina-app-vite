@@ -9,7 +9,7 @@ export default function AddOrder() {
 
   // Load products from backend
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}api/products`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products || []));
   }, []);
@@ -35,7 +35,7 @@ export default function AddOrder() {
       quantity,
       price,
     };
-    let res = await fetch(`${import.meta.env.VITE_API_URL}api/add-order`, {
+    let res = await fetch(`${import.meta.env.VITE_API_URL}/api/add-order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order),
@@ -92,7 +92,7 @@ export default function AddOrder() {
               >
                 {p.image && (
                   <img
-                    src={`${import.meta.env.VITE_API_URL}${p.image}`}
+                    src={`${import.meta.env.VITE_API_URL}/${p.image}`}
                     alt={p.name}
                     style={{
                       width: "40px",
@@ -124,7 +124,7 @@ export default function AddOrder() {
         >
           {selectedProduct.image && (
             <img
-              src={`${import.meta.env.VITE_API_URL}${selectedProduct.image}`}
+              src={`${import.meta.env.VITE_API_URL}/${selectedProduct.image}`}
               alt={selectedProduct.name}
               style={{ width: "50px", height: "50px", marginRight: "10px" }}
             />

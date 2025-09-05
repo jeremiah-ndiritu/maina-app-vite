@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function OrdersList() {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}api/orders`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/orders`)
       .then((res) => res.json())
       .then((data) => setOrders(data.orders || []));
   }, []);
